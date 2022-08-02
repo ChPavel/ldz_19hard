@@ -1,50 +1,31 @@
 GET http://127.0.0.1:10001/movies/
 Accept: application/json
-
+Authorization:
 ###
 
 GET http://127.0.0.1:10001/movies/?director_id=12
 Accept: application/json
-
+Authorization:
 ###
 
 GET http://127.0.0.1:10001/movies/?genre_id=4
 Accept: application/json
-
+Authorization:
 ###
 
 GET http://127.0.0.1:10001/movies/?year=2010
 Accept: application/json
-
-###
-
-GET http://127.0.0.1:10001/directors/
-Accept: application/json
-
-###
-
-GET http://127.0.0.1:10001/directors/1
-Accept: application/json
-
-###
-
-GET http://127.0.0.1:10001/genres/
-Accept: application/json
-
-###
-
-GET http://127.0.0.1:10001/genres/1
-Accept: application/json
-
+Authorization:
 ###
 
 GET http://127.0.0.1:10001/movies/21
 Accept: application/json
-
+Authorization:
 ###
 
 POST http://127.0.0.1:10001/movies/
 Accept: application/json
+Authorization:
 Content-Type: application/json
 
 {
@@ -59,6 +40,7 @@ Content-Type: application/json
 
 PUT http://127.0.0.1:10001/movies/21
 Accept: application/json
+Authorization:
 Content-Type: application/json
 
 {
@@ -76,6 +58,7 @@ Content-Type: application/json
 
 PATCH http://127.0.0.1:10001/movies/3
 Accept: application/json
+Authorization:
 Content-Type: application/json
 
 {
@@ -92,3 +75,143 @@ Content-Type: application/json
 ###
 
 DELETE http://127.0.0.1:10001/movies/21
+###
+
+GET http://127.0.0.1:10001/directors/
+Accept: application/json
+Authorization:
+###
+
+POST http://127.0.0.1:10001/directors/
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "name": "Гарри Поттер"
+}
+
+###
+
+GET http://127.0.0.1:10001/directors/1
+Accept: application/json
+Authorization:
+###
+
+
+PUT http://127.0.0.1:10001/directors/21
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "id": 21,
+  "name": "Гарри П!"
+}
+
+###
+
+DELETE http://127.0.0.1:10001/directors/21
+###
+
+GET http://127.0.0.1:10001/genres/
+Accept: application/json
+Authorization:
+###
+
+POST http://127.0.0.1:10001/genres/
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "name": "Жанр Поттер"
+}
+
+###
+
+GET http://127.0.0.1:10001/genres/1
+Accept: application/json
+Authorization:
+###
+
+PUT http://127.0.0.1:10001/genres/19
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "id": 19,
+  "name": "Жанр П!"
+}
+
+###
+
+DELETE http://127.0.0.1:10001/genres/19
+###
+
+GET http://127.0.0.1:10001/users/
+Accept: application/json
+Authorization:
+###
+
+POST http://127.0.0.1:10001/users/
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "username": "Поттер",
+  "password": "2512!!**@@",
+  "role": "user"
+}
+
+###
+
+GET http://127.0.0.1:10001/users/4
+Accept: application/json
+Authorization:
+###
+
+PUT http://127.0.0.1:10001/users/4
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "id": 4,
+  "username": "Поттер Гарри",
+  "password": "2512!!**@@",
+  "role": "user"
+}
+
+###
+
+DELETE http://127.0.0.1:10001/users/4
+###
+
+POST http://127.0.0.1:10001/users/auth
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "username": "Поттер",
+  "password": "2512!!**@@"
+}
+
+###
+
+PUT http://127.0.0.1:10001/users/auth
+Accept: application/json
+Authorization:
+Content-Type: application/json
+
+{
+  "id": 4,
+  "username": "Поттер Гарри",
+  "password": "2512!!**@@",
+  "role": "user"
+}
+
+###
