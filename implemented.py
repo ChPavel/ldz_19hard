@@ -51,3 +51,4 @@ def admin_required(func):
             abort(403)
         return func(*args, **kwargs)
     return wrepper
+

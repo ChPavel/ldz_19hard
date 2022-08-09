@@ -26,8 +26,17 @@ class UserService:
         return self.dao.create(user_d)
 
     def update(self, user_d):
+        user_d["password"] = self.get_hash(user_d["password"])
         self.dao.update(user_d)
         return self.dao
 
     def delete(self, rid):
         self.dao.delete(rid)
+
+    def get_hash(self, password):
+        return hashlib.pbkdf2_hmac(
+            'sha256',
+            password.encode('utf-8'),
+            PWD_HASH_SALT,
+            PWD_HASH_ITERATIONS
+        ).decode("utf-8", "ignore")

@@ -16,7 +16,7 @@ class AuthService:
     def get_hash(self, password):
         return hashlib.pbkdf2_hmac(
             'sha256',
-            password.encode('utf-8'),  # Convert the password to bytes
+            password.encode('utf-8'),
             PWD_HASH_SALT,
             PWD_HASH_ITERATIONS
         ).decode("utf-8", "ignore")
@@ -68,10 +68,12 @@ class AuthService:
 
         try:
             data = jwt.decode(refresh_token, SECRET, algorithms=[ALGO])
+
         except Exception as e:
             abort(401)
 
         username = data.get("username")
+
         user: User = self.dao.get_user_by_username(username)
 
         user_data = {

@@ -18,7 +18,7 @@ Accept: application/json
 Authorization:
 ###
 
-GET http://127.0.0.1:10001/movies/21
+GET http://127.0.0.1:10001/movies/20
 Accept: application/json
 Authorization:
 ###
@@ -56,25 +56,25 @@ Content-Type: application/json
 
 ###
 
-PATCH http://127.0.0.1:10001/movies/3
-Accept: application/json
-Authorization: Bearer
-Content-Type: application/json
+#PATCH http://127.0.0.1:10001/movies/21
+#Accept: application/json
+#Authorization: Bearer
+#Content-Type: application/json
+#
+#{
+#  "id": 21,
+#  "title": "-------",
+#  "trailer": "-----",
+#  "year": 0,
+#  "rating": 0,
+#  "description": "0 из 9!",
+#  "genre_id": 1,
+#  "director_id": 1
+#}
+#
+####
 
-{
-  "id": 21,
-  "title": "-------",
-  "trailer": "-----",
-  "year": 0,
-  "rating": 0,
-  "description": "0 из 10!",
-  "genre_id": 1,
-  "director_id": 1
-}
-
-###
-
-DELETE http://127.0.0.1:10001/movies/22
+DELETE http://127.0.0.1:10001/movies/21
 Accept: application/json
 Authorization: Bearer
 ###
@@ -95,7 +95,7 @@ Content-Type: application/json
 
 ###
 
-GET http://127.0.0.1:10001/directors/1
+GET http://127.0.0.1:10001/directors/21
 Accept: application/json
 Authorization:
 ###
@@ -134,7 +134,7 @@ Content-Type: application/json
 
 ###
 
-GET http://127.0.0.1:10001/genres/1
+GET http://127.0.0.1:10001/genres/19
 Accept: application/json
 Authorization:
 ###
@@ -163,7 +163,6 @@ Authorization:
 
 POST http://127.0.0.1:10001/users/
 Accept: application/json
-Authorization: Bearer
 Content-Type: application/json
 
 {
@@ -181,7 +180,6 @@ Authorization:
 
 PUT http://127.0.0.1:10001/users/4
 Accept: application/json
-Authorization: Bearer
 Content-Type: application/json
 
 {
@@ -193,9 +191,8 @@ Content-Type: application/json
 
 ###
 
-DELETE http://127.0.0.1:10001/users/4
+DELETE http://127.0.0.1:10001/users/5
 Accept: application/json
-Authorization: Bearer
 ###
 
 POST http://127.0.0.1:10001/auth
@@ -218,3 +215,4 @@ Content-Type: application/json
 }
 
 ###
+
